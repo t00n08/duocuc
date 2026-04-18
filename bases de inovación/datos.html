@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Center - HALO3K</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-arrow-left back-icon" id="menu-close"></i>
+                <div class="logo">
+                    <span class="logo-icon">H</span>
+                    <h1>HALO3K</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <a href="dashboard.html" class="btn-link"><li><i class="fas fa-home"></i> Dashboard</li></a>
+                    <a href="oficinas.html" class="btn-link"><li><i class="fas fa-file-contract"></i> Oficinas</li></a>
+                    <a href="analisis.html" class="btn-link"><li><i class="fas fa-chart-pie"></i> Análisis</li></a>
+                    <a href="candidatos.html" class="btn-link"><li><i class="fas fa-users"></i> Candidatos</li></a>
+                    <a href="datos.html" class="btn-link"><li class="active"><i class="fas fa-database"></i> Datos</li></a>
+                    <a href="herramientas.html" class="btn-link"><li><i class="fas fa-wrench"></i> Herramientas</li></a>
+                    <a href="info.html" class="btn-link"><li><i class="fas fa-info-circle"></i> Info</li></a>
+                    <a href="ayuda.html" class="btn-link"><li><i class="fas fa-question-circle"></i> Ayuda</li></a>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <i class="fas fa-bars mobile-menu-btn" id="menu-toggle"></i>
+                    <h2>Data Center</h2>
+                </div>
+                <div class="user-profile">
+                    <div class="user-info">
+                        <span class="user-name">DB Admin</span>
+                        <span class="user-role">Sincronizado</span>
+                    </div>
+                    <div class="user-avatar">DB</div>
+                </div>
+            </header>
+
+            <div class="content-grid">
+                <section class="card neon-border" style="grid-column: span 1;">
+                    <div class="search-bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Filtrar registros técnicos...">
+                    </div>
+                </section>
+
+                <section class="data-section card neon-border" style="grid-column: span 1;">
+                    <header class="metrics-header">
+                        <h3>Registros de Instituciones</h3>
+                    </header>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>INSTITUCIÓN</th>
+                                    <th>ESPECIALIDAD</th>
+                                    <th>ESTADO</th>
+                                    <th>ACCION</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#HK-921</td>
+                                    <td>Liceo Politecnico A-2</td>
+                                    <td>Programación</td>
+                                    <td><span class="status online">Activo</span></td>
+                                    <td><i class="fas fa-ellipsis-h" style="cursor:pointer;"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>#HK-841</td>
+                                    <td>Liceo Industrial A-21</td>
+                                    <td>Telecom</td>
+                                    <td><span class="status online">Activo</span></td>
+                                    <td><i class="fas fa-ellipsis-h" style="cursor:pointer;"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>#HK-332</td>
+                                    <td>Inacap Santiago</td>
+                                    <td>Ciberseguridad</td>
+                                    <td><span class="status offline">Pendiente</span></td>
+                                    <td><i class="fas fa-ellipsis-h" style="cursor:pointer;"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const sidebar = document.getElementById('sidebar');
+
+        if(menuToggle) {
+            menuToggle.onclick = () => sidebar.classList.add('active');
+        }
+        if(menuClose) {
+            menuClose.onclick = () => sidebar.classList.remove('active');
+        }
+    </script>
+</body>
+</html>

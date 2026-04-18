@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramientas - HALO3K</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-arrow-left back-icon"></i>
+                <div class="logo">
+                    <span class="logo-icon">H</span>
+                    <h1>HALO3K</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <a href="dashboard.html" class="btn-link"><li><i class="fas fa-home"></i> Dashboard</li></a>
+                    <a href="oficinas.html" class="btn-link"><li><i class="fas fa-file-contract"></i> Oficinas</li></a>
+                    <a href="analisis.html" class="btn-link"><li><i class="fas fa-chart-pie"></i> Análisis</li></a>
+                    <a href="candidatos.html" class="btn-link"><li><i class="fas fa-users"></i> Candidatos</li></a>
+                    <a href="datos.html" class="btn-link"><li><i class="fas fa-database"></i> Datos</li></a>
+                    <a href="herramientas.html" class="btn-link"><li class="active"><i class="fas fa-wrench"></i> Herramientas</li></a>
+                    <a href="info.html" class="btn-link"><li><i class="fas fa-info-circle"></i> Info</li></a>
+                    <a href="ayuda.html" class="btn-link"><li><i class="fas fa-question-circle"></i> Ayuda</li></a>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Technical Tools Center</h2>
+                <div class="user-profile">
+                    <div class="user-info">
+                        <span class="user-name">Admin Core</span>
+                        <span class="user-role">Nivel 4</span>
+                    </div>
+                    <div class="user-avatar">AI</div>
+                </div>
+            </header>
+
+            <div class="content-grid">
+                
+                <section class="card neon-border" style="grid-column: span 2;">
+                    <header class="metrics-header">
+                        <h3><i class="fas fa-terminal"></i> System Console</h3>
+                    </header>
+                    <div style="background: rgba(0,0,0,0.4); padding: 20px; font-family: 'Courier New', monospace; color: var(--neon-blue); border-radius: 10px; margin-top: 15px; border: 1px solid var(--glass-border);">
+                        <p>> HALO-AI Kernel v3.0.4 loaded...</p>
+                        <p>> Deep Scan: 142,805 records verified.</p>
+                        <p>> Network Status: <span class="status online">OPTIMAL</span></p>
+                        <p>> _</p>
+                    </div>
+                </section>
+
+                <section class="card neon-border">
+                    <div class="specialty-text">
+                        <h3>Generador de Credenciales</h3>
+                        <p>Crea carnets digitales para nuevos técnicos en segundos.</p>
+                        <button class="btn-primary" style="margin-top: 20px; width: 100%;">Lanzar Creador</button>
+                    </div>
+                </section>
+
+                <section class="card neon-border">
+                    <header class="metrics-header">
+                        <h3>Latencia de Red</h3>
+                        <div class="score">12ms</div>
+                    </header>
+                    <div class="chart-area" style="height: 60px; margin-top: 20px;">
+                        <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden;">
+                            <div style="width: 92%; height: 100%; background: var(--neon-blue); box-shadow: 0 0 10px var(--neon-blue);"></div>
+                        </div>
+                        <p style="font-size: 12px; color: var(--text-muted); margin-top: 10px;">Conexión encriptada vía HALO-Link</p>
+                    </div>
+                </section>
+
+                <section class="card neon-border">
+                    <h3>Scripts Rápidos</h3>
+                    <ul class="check-list" style="margin-top: 15px;">
+                        <li style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border);">
+                            <span>Limpiar Caché</span>
+                            <i class="fas fa-play-circle" style="color: var(--neon-blue); cursor: pointer;"></i>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border);">
+                            <span>Backup General</span>
+                            <i class="fas fa-play-circle" style="color: var(--neon-blue); cursor: pointer;"></i>
+                        </li>
+                        <li style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0;">
+                            <span>Actualizar IA</span>
+                            <i class="fas fa-play-circle" style="color: var(--neon-blue); cursor: pointer;"></i>
+                        </li>
+                    </ul>
+                </section>
+
+            </div>
+        </main>
+    </div>
+</body>
+</html>

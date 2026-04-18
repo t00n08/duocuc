@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HALO3K Dashboard - Responsive</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-arrow-left back-icon"></i>
+                <div class="logo">
+                    <span class="logo-icon">H</span>
+                    <h1>HALO3K</h1>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <a href="dashboard.html"  class="btn-link" ><li class="active"><i class="fas fa-home"></i> Dashboard</li></a>
+                    <a href="oficinas.html"  class="btn-link" ><li><i class="fas fa-file-contract"></i> Oficinas</li></a>
+                    <a href="analisis.html"  class="btn-link" ><li><i class="fas fa-chart-pie"></i> Análisis</li></a>
+                    <a href="candidatos.html"  class="btn-link" ><li><i class="fas fa-users"></i> Candidatos</li></a>
+                    <a href="datos.html"  class="btn-link" ><li><i class="fas fa-database"></i> Datos</li></a>
+                    <a href="herramientas.html"  class="btn-link" ><li><i class="fas fa-wrench"></i> Herramientas</li></a>
+                    <a href="info.html"  class="btn-link" ><li><i class="fas fa-info-circle"></i> Info</li></a>
+                    <a href="ayuda.html"><li><i class="fas fa-question-circle"></i> Ayuda</li></a>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <i class="fas fa-cogs"></i>
+                <span>Configuración</span>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Dashboard</h2>
+            </header>
+
+            <div class="content-grid">
+                <section class="offer-section card neon-border">
+                    <div class="offer-text">
+                        <h3>Publicar Nueva Oferta</h3>
+                        <p>Aseguramos la mejor calidad de talento para tus necesidades técnicas.</p>
+                        <p>Encuentra desarrolladores experimentados, analistas de datos, ingenieros de IA y más.</p>
+                        <button class="btn-primary">Configurar Oferta</button>
+                    </div>
+                    <div class="offer-visual">
+                        <div class="progress-circle">
+                            <span class="percentage">36,07%</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="candidates-section">
+                    <h3>Candidatos Recomendados por IA</h3>
+                    <div class="candidate-cards">
+                        <div class="glass-card card">
+                            <i class="fas fa-id-card card-icon"></i>
+                            <p>Detalles del Candidato</p>
+                        </div>
+                        <div class="glass-card card">
+                            <i class="fas fa-chart-line card-icon"></i>
+                            <p>Métricas de Desempeño</p>
+                            <span class="stat-highlight">871%</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="filters-section">
+                    <h3>Filtros por Liceo Técnico y</h3>
+                    <div class="filter-cards">
+                        <div class="glass-card card filter-card">
+                            <div class="filter-header">
+                                <i class="fas fa-user-graduate filter-icon"></i>
+                                <span class="filter-percentage">27.4%</span>
+                            </div>
+                            <p>Habilidades</p>
+                            <span class="filter-value">42.64.3%</span>
+                            <a href="#" class="view-link">Ver Más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="glass-card card filter-card">
+                            <div class="filter-header">
+                                <i class="fas fa-check-circle filter-icon"></i>
+                                <span class="filter-percentage">60%</span>
+                            </div>
+                            <p>Validaciones</p>
+                            <span class="filter-value">22k</span>
+                            <a href="#" class="view-link">Ver Más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <div class="glass-card card filter-card">
+                            <div class="filter-header">
+                                <i class="fas fa-check-circle filter-icon"></i>
+                                <span class="filter-percentage">46%</span>
+                            </div>
+                            <p>Validaciones</p>
+                            <span class="filter-value">21k</span>
+                            <a href="#" class="view-link">Ver Más <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="specialty-section card neon-border">
+                    <div class="specialty-text">
+                        <h3>Especialidad y Aptitudes</h3>
+                        <ul class="check-list">
+                            <li><i class="fas fa-check-circle"></i> Desarrollo Web Frontend</li>
+                            <li><i class="fas fa-check-circle"></i> Data Science</li>
+                            <li><i class="fas fa-check-circle"></i> Machine Learning</li>
+                            <li><i class="fas fa-check-circle"></i> Cloud Computing</li>
+                        </ul>
+                    </div>
+                    <div class="specialty-visual">
+                        <div class="doughnut-chart">
+                            <span class="percentage">13.3%</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="metrics-section card neon-border">
+                    <header class="metrics-header">
+                        <h3>Métricas de Contratación</h3>
+                        <button class="btn-secondary">Talento Center</button>
+                    </header>
+                    <div class="chart-area">
+                        <div class="simulated-chart">
+                            <div class="chart-line"></div>
+                            <div class="chart-bars">
+                                <div class="bar bar1"></div>
+                                <div class="bar bar2"></div>
+                                <div class="bar bar3"></div>
+                                <div class="bar bar4"></div>
+                                <div class="bar bar5"></div>
+                                <div class="bar bar6"></div>
+                                <div class="bar bar7"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

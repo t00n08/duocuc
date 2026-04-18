@@ -1,0 +1,913 @@
+:root {
+    --bg-dark: #020617;
+    --neon-blue: #00f2ff;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(0, 242, 255, 0.2);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Efecto de resplandor de fondo */
+.background-overlay {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 242, 255, 0.1) 0%, transparent 70%);
+    z-index: -1;
+}
+
+.hero {
+    text-align: center;
+    max-width: 800px;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* El Botón Neón */
+.btn-neon {
+    background: var(--neon-blue);
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #000;
+    /* El truco del brillo exterior */
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 30px rgba(0, 242, 255, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-neon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--neon-blue), 0 0 50px rgba(0, 242, 255, 0.6);
+}
+
+/* Efecto Glassmorphism (para el Dashboard) */
+.glass-card {
+    margin-top: 50px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px); /* Esto crea el efecto de vidrio esmerilado */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    padding: 40px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.title {
+    background: linear-gradient(to right, #ffffff, #00f2ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cube-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #00d1ff, #0047ff); /* Gradiente azul */
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 209, 255, 0.6); /* El brillo neón */
+    position: relative;
+    /* Animación para que flote */
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.hero {
+    position: relative; /* Indispensable para que el absoluto funcione */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.glass-card {
+    position: absolute; /* Se sale del flujo normal */
+    
+    /* Ejemplo: Arriba a la derecha */
+    top: 20%; 
+    right: 15%;
+    
+    /* Si lo quieres abajo a la izquierda, usarías:
+    bottom: 10%;
+    left: 10%; 
+    */
+
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+}
+
+.btn-link {
+    text-decoration: none; /* Quita el subrayado */
+    display: inline-block; /* Para que respete el tamaño del botón */
+}
+
+/* --- Variables y Configuración Base --- */
+:root {
+    --bg-dark: #010617; /* Fondo ultra oscuro */
+    --primary-neon: #00f2ff; /* Cian neón */
+    --secondary-neon: #0047ff; /* Azul profundo */
+    --text-main: #e2e8f0; /* Texto claro */
+    --text-muted: #94a3b8; /* Texto secundario */
+    --glass-bg: rgba(255, 255, 255, 0.03); /* Fondo de tarjetas de vidrio */
+    --glass-border: rgba(0, 242, 255, 0.2); /* Borde de tarjetas de vidrio */
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra de tarjeta */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evitar scroll horizontal */
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+}
+
+/* --- Estilos de Tarjetas Comunes --- */
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de borde neón */
+.neon-border {
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.01);
+}
+
+/* --- Botones --- */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    padding: 12px 24px;
+}
+
+.btn-primary {
+    background-color: var(--primary-neon);
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.8);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Layout del Dashboard (Mobile First) --- */
+.dashboard-container {
+    display: flex;
+    flex-direction: column; /* Apilar sidebar y contenido en móvil */
+}
+
+/* Barra lateral en móvil (ocultar o simplificar) */
+.sidebar {
+    background: rgba(1, 6, 23, 0.95);
+    padding: 20px;
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky; /* Mantener en la parte superior */
+    top: 0;
+    z-index: 100;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.back-icon {
+    color: var(--primary-neon);
+    font-size: 18px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    background-color: var(--primary-neon);
+    color: #000;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.logo h1 {
+    font-size: 20px;
+    color: var(--primary-neon);
+}
+
+.sidebar-nav, .sidebar-footer {
+    display: none; /* Ocultar en móvil para simplificar */
+}
+
+/* Contenido principal */
+.main-content {
+    padding: 20px;
+}
+
+.main-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.main-header h2 {
+    font-size: 28px;
+    text-shadow: 0 0 10px #fff;
+}
+
+/* Grilla de contenido en móvil */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna en móvil */
+    gap: 20px;
+}
+
+/* Ajustes de secciones específicas en móvil */
+.content-grid section h3 {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+/* Sección Oferta */
+.offer-section {
+    display: flex;
+    flex-direction: column-reverse; /* Poner el gráfico arriba en móvil */
+    gap: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.offer-text p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.offer-visual {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(var(--primary-neon) 0% 36%, var(--bg-dark) 36% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+}
+
+.offer-visual::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: var(--bg-dark);
+    border-radius: 50%;
+}
+
+.progress-circle .percentage {
+    position: relative;
+    z-index: 1;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Sección Candidatos y Filtros (apilar tarjetas) */
+.candidate-cards, .filter-cards {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna */
+    gap: 15px;
+}
+
+.candidate-cards .card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+}
+
+.card-icon {
+    font-size: 30px;
+    color: var(--secondary-neon);
+}
+
+.stat-highlight {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-left: auto;
+}
+
+/* Sección Filtros detallada */
+.filter-card {
+    text-align: left;
+}
+
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.filter-icon {
+    font-size: 24px;
+    color: var(--secondary-neon);
+}
+
+.filter-percentage {
+    font-size: 18px;
+    color: var(--text-muted);
+}
+
+.filter-value {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin: 5px 0 10px;
+}
+
+.view-link {
+    color: var(--primary-neon);
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Sección Especialidad */
+.specialty-section {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.check-list {
+    list-style: none;
+    text-align: left;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.check-list li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.check-list li i {
+    color: var(--secondary-neon);
+}
+
+.specialty-visual {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(var(--secondary-neon) 0% 13%, var(--bg-dark) 13% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 71, 255, 0.2);
+}
+
+.specialty-visual::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: var(--bg-dark);
+    border-radius: 50%;
+}
+
+.doughnut-chart .percentage {
+    position: relative;
+    z-index: 1;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Sección Métricas */
+.metrics-section {
+    text-align: center;
+}
+
+.metrics-header {
+    margin-bottom: 15px;
+}
+
+.chart-area {
+    height: 150px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 15px;
+}
+
+/* Simulación de gráfico */
+.simulated-chart {
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.chart-bars {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 80%;
+}
+
+.bar {
+    width: 10%;
+    background: linear-gradient(to top, var(--secondary-neon), var(--primary-neon));
+    border-radius: 5px 5px 0 0;
+}
+
+.bar1 { height: 40%; }
+.bar2 { height: 60%; }
+.bar3 { height: 30%; }
+.bar4 { height: 80%; }
+.bar5 { height: 50%; }
+.bar6 { height: 90%; }
+.bar7 { height: 70%; }
+
+/* --- Media Queries (Para tablets y computadoras, como la imagen) --- */
+@media (min-width: 768px) {
+    .dashboard-container {
+        flex-direction: row; /* Sidebar a la izquierda, contenido a la derecha */
+    }
+
+    /* Barra lateral estilo imagen */
+    .sidebar {
+        width: 280px;
+        min-height: 100vh;
+        border-right: 1px solid var(--glass-border);
+        border-bottom: none;
+        position: fixed; /* Sidebar fija */
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .sidebar-header {
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+    .sidebar-header .back-icon {
+        display: none; /* Ocultar icono atrás */
+    }
+
+    .logo {
+        gap: 15px;
+    }
+
+    .logo h1 {
+        font-size: 24px;
+    }
+
+    .sidebar-nav {
+        display: block; /* Mostrar navegación */
+        margin-bottom: auto; /* Empujar footer hacia abajo */
+    }
+
+    .sidebar-nav ul {
+        list-style: none;
+    }
+
+    .sidebar-nav li {
+        color: var(--text-muted);
+        padding: 12px 15px;
+        border-radius: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+
+    .sidebar-nav li.active {
+        background-color: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        box-shadow: 0 0 10px rgba(0, 242, 255, 0.1);
+    }
+
+    .sidebar-nav li:hover:not(.active) {
+        background-color: rgba(255, 255, 255, 0.02);
+        color: #fff;
+    }
+
+    .sidebar-footer {
+        display: flex; /* Mostrar footer */
+        align-items: center;
+        gap: 15px;
+        color: var(--text-muted);
+        padding: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        cursor: pointer;
+    }
+
+    /* Contenido principal con espacio para sidebar */
+    .main-content {
+        margin-left: 280px; /* Ancho de sidebar */
+        padding: 40px;
+    }
+
+    .main-header {
+        text-align: left;
+        margin-bottom: 40px;
+    }
+
+    .main-header h2 {
+        font-size: 32px;
+    }
+
+    /* Grilla de contenido en pantallas grandes */
+    .content-grid {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+        gap: 30px;
+    }
+
+    /* Ajustes específicos para pantallas grandes */
+    .content-grid section h3 {
+        font-size: 20px;
+    }
+
+    .offer-section, .specialty-section {
+        flex-direction: row; /* Contenido horizontal */
+        text-align: left;
+        align-items: flex-start;
+        grid-column: span 2; /* Ocupar todo el ancho */
+    }
+
+    .offer-text, .specialty-text {
+        flex: 2;
+    }
+
+    .offer-visual, .specialty-visual {
+        flex: 1;
+        width: 180px;
+        height: 180px;
+    }
+
+    .offer-visual::after, .specialty-visual::after {
+        width: 150px;
+        height: 150px;
+    }
+
+    .progress-circle .percentage, .doughnut-chart .percentage {
+        font-size: 28px;
+    }
+
+    /* Tarjetas en grilla */
+    .candidate-cards, .filter-cards {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    }
+
+    .filters-section .filter-cards {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas para filtros */
+    }
+
+    /* Sección Métricas ocupar todo el ancho */
+    .metrics-section {
+        grid-column: span 2;
+        text-align: left;
+    }
+
+    .metrics-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .chart-area {
+        height: 250px;
+    }
+}
+
+/* Estilos específicos para Candidatos */
+.candidate-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.candidate-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-neon);
+}
+
+.score {
+    margin-left: auto;
+    background: rgba(0, 242, 255, 0.1);
+    color: var(--primary-neon);
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Ajuste para móviles: en pantallas pequeñas el score va abajo */
+@media (max-width: 480px) {
+    .candidate-info {
+        flex-wrap: wrap;
+    }
+    .score {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+/* --- VARIABLES --- */
+:root {
+    --bg-dark: #010617;
+    --primary-neon: #00f2ff;
+    --secondary-neon: #0047ff;
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+    --glass: rgba(255, 255, 255, 0.03);
+    --border: rgba(0, 242, 255, 0.2);
+}
+
+/* --- BASE --- */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Rajdhani', sans-serif; /* Fuente de la foto */
+    margin: 0;
+}
+
+.dashboard-container { display: flex; }
+
+/* --- SIDEBAR (BARRA LATERAL) --- */
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background: #010617;
+    border-right: 1px solid var(--border);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 1000;
+}
+
+.sidebar-header .logo { display: flex; align-items: center; gap: 15px; margin: 20px 0; }
+.logo-box { 
+    background: var(--primary-neon); color: #000; 
+    padding: 5px 12px; border-radius: 8px; font-weight: bold; 
+    box-shadow: 0 0 15px var(--primary-neon);
+}
+
+.sidebar-nav ul { list-style: none; padding: 0; }
+.sidebar-nav li {
+    padding: 12px 15px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.sidebar-nav li.active {
+    background: rgba(0, 71, 255, 0.15);
+    color: var(--primary-neon);
+    border-left: 3px solid var(--primary-neon);
+}
+
+.sidebar-footer { margin-top: auto; }
+.config-btn {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.main-content {
+    flex: 1;
+    margin-left: 280px;
+    padding: 30px;
+}
+
+.header-left { display: flex; align-items: center; gap: 20px; }
+
+.search-bar {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.search-bar input {
+    background: none; border: none; color: white; width: 100%; outline: none;
+}
+
+/* --- TABLA FUTURISTA --- */
+.data-section { margin-top: 30px; }
+
+.table-container { width: 100%; overflow-x: auto; } /* Scroll para móvil */
+
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+
+th {
+    text-align: left;
+    color: var(--primary-neon);
+    padding: 15px;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+}
+
+td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.02); font-size: 14px; }
+
+.status {
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.online { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
+.offline { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .sidebar { left: -100%; transition: 0.3s; }
+    .sidebar.active { left: 0; }
+    .main-content { margin-left: 0; padding: 15px; }
+    .stat-mini { width: 100%; }
+}
+
+.neon-border {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+/* ==========================================================================
+   CORRECCIONES EXCLUSIVAS PARA CELULARES (MOBILE-FIRST)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. Ocultar el Sidebar por defecto y ponerlo flotante */
+    .sidebar {
+        width: 280px;
+        left: -100%;
+        position: fixed;
+        z-index: 9999;
+        transition: 0.3s ease-in-out;
+    }
+
+    /* Clase que se activa con Javascript para mostrar el menú */
+    .sidebar.active {
+        left: 0;
+        box-shadow: 10px 0 50px rgba(0,0,0,0.8);
+    }
+
+    /* 2. El contenido principal debe usar el 100% del ancho de la pantalla */
+    .main-content {
+        margin-left: 0 !important;
+        padding: 15px;
+        width: 100%;
+    }
+
+    /* 3. Forzar que TODO sea de 1 sola columna */
+    .content-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    /* 4. Anular el "grid-column: span 2" que usé en Análisis y Herramientas */
+    section[style*="grid-column: span 2"], 
+    .card[style*="grid-column: span 2"] {
+        grid-column: span 1 !important;
+    }
+
+    /* 5. Ajustar tamaños de fuente y márgenes para que no se desborden */
+    .main-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .main-header h2 {
+        font-size: 18px;
+    }
+
+    .user-profile {
+        display: none; /* Ocultamos el perfil arriba para ahorrar espacio en celular */
+    }
+
+    .chart-area {
+        height: 200px !important; /* Gráficos más bajos en celular */
+    }
+}
+
+/* Botón de Menú Hamburguesa (Visible solo en móvil) */
+.mobile-menu-btn {
+    display: none;
+    font-size: 24px;
+    color: var(--neon-blue, #00f2ff);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+}
